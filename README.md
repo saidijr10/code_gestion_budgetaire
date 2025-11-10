@@ -1,20 +1,25 @@
-💰 Gestion Budgétaire
+# 💰 Gestion Budgétaire
 
-Une application web de gestion budgétaire permettant de suivre les revenus, dépenses et soldes.
-Projet full-stack développé avec Django REST Framework (backend) et Vue.js (frontend).
+Une application web de **gestion budgétaire** permettant de suivre les revenus, dépenses et soldes.  
+Projet full-stack développé avec **Django REST Framework (backend)** et **Vue.js (frontend)**.
 
-⚙️ Prérequis
+---
+
+## ⚙️ Prérequis
 
 Avant de commencer, assure-toi d’avoir installé sur ta machine :
 
-Python 3.x
+- [Python 3.x](https://www.python.org/downloads/)
+- [Node.js & npm](https://nodejs.org/en/download/)
+- [Git](https://git-scm.com/)
 
-Node.js & npm
+---
 
-Git
+## 🧩 Backend — Django REST Framework
 
-🧩 Backend — Django REST Framework
-Étape 1 : Création du dossier et environnement virtuel
+### Étape 1 : Création du dossier et environnement virtuel
+
+```bash
 mkdir gestion-budgetaire
 cd gestion-budgetaire
 
@@ -22,19 +27,26 @@ python -m venv env
 env\Scripts\activate  # sous Windows
 # ou
 source env/bin/activate  # sous Mac/Linux
+```
 
-Étape 2 : Installation des dépendances
+### Étape 2 : Installation des dépendances
+
+```bash
 pip install django djangorestframework django-cors-headers pandas openpyxl
+```
 
-Étape 3 : Création du projet et de l’application
+### Étape 3 : Création du projet et de l’application
+
+```bash
 django-admin startproject backend
 cd backend
 python manage.py startapp budget_app
+```
 
-Étape 4 : Configuration de backend/settings.py
+### Étape 4 : Configuration de `backend/settings.py`
 
-INSTALLED_APPS :
-
+**INSTALLED_APPS :**
+```python
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -46,10 +58,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'budget_app',
 ]
+```
 
-
-MIDDLEWARE (au début) :
-
+**MIDDLEWARE (au début) :**
+```python
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -57,40 +69,64 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     ...
 ]
+```
 
-
-À la fin du fichier :
-
+**À la fin du fichier :**
+```python
 CORS_ALLOW_ALL_ORIGINS = True
+```
 
-Étape 5 : Migration de la base de données
+### Étape 5 : Migration de la base de données
+
+```bash
 python manage.py makemigrations
 python manage.py migrate
+```
 
-Étape 6 : Lancer le serveur backend
+### Étape 6 : Lancer le serveur backend
+
+```bash
 python manage.py runserver
+```
 
+Le backend sera disponible sur **http://127.0.0.1:8000/**
 
-Le backend sera disponible sur http://127.0.0.1:8000/
+---
 
-🎨 Frontend — Vue.js
-Étape 1 : Installer Vue CLI
+## 🎨 Frontend — Vue.js
+
+### Étape 1 : Installer Vue CLI
+
+```bash
 npm install -g @vue/cli
+```
 
-Étape 2 : Créer le projet frontend
+### Étape 2 : Créer le projet frontend
+
+```bash
 vue create frontend
 cd frontend
+```
 
-Étape 3 : Lancer le serveur frontend
+### Étape 3 : Lancer le serveur frontend
+
+```bash
 npm run serve
+```
 
+Le frontend sera accessible sur **http://localhost:8080/**
 
-Le frontend sera accessible sur http://localhost:8080/
+### Étape 4 : Installer Vue Router (si nécessaire)
 
-Étape 4 : Installer Vue Router (si nécessaire)
+```bash
 npm install vue-router@4
+```
 
-📂 Structure du projet
+---
+
+## 📂 Structure du projet
+
+```
 gestion-budgetaire/
 │
 ├── backend/
@@ -109,28 +145,37 @@ gestion-budgetaire/
     ├── src/
     ├── package.json
     └── ...
+```
 
-🧠 Technologies utilisées
+---
 
-Backend : Django, Django REST Framework
+## 🧠 Technologies utilisées
 
-Frontend : Vue.js, Vue Router
+- **Backend** : Django, Django REST Framework  
+- **Frontend** : Vue.js, Vue Router  
+- **Autres** : Pandas, OpenPyXL (pour traitement et export de données)
 
-Autres : Pandas, OpenPyXL (pour traitement et export de données)
+---
 
-🚀 Lancement complet du projet
+## 🚀 Lancement complet du projet
 
-1️⃣ Lancer le backend :
+### 1️⃣ Lancer le backend :
 
+```bash
 cd backend
 python manage.py runserver
+```
 
+### 2️⃣ Lancer le frontend :
 
-2️⃣ Lancer le frontend :
-
+```bash
 cd ../frontend
 npm run serve
+```
 
-🧾 Auteur
+---
 
-👨‍💻 Soufiane Saidi
+## 🧾 Auteur
+
+👨‍💻 **Soufiane Saidi**  
+🔗 [GitHub](https://github.com/saidijr10)
